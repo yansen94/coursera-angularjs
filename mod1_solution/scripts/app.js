@@ -8,13 +8,14 @@ LunchCheckController.$inject = ['$scope'];
 function LunchCheckController($scope) {
 
     let items;
+    let count;
 
     $scope.checkIfTooMuch = function () {
         items = $scope.items;
-        countItems = countItems();
-        if (countItems <= 3) {
+        count = countItems();
+        if (count <= 3 && count != 0) {
             $scope.message = "Enjoy!";
-        } else if (countItems == 0) {
+        } else if (count == 0) {
             $scope.message = "Please enter data first"
         } else {
             $scope.message = "Too much!";
