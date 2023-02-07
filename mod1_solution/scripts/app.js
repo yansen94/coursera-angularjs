@@ -22,7 +22,8 @@ function LunchCheckController($scope) {
     }
 
     function countItems() {
-        return items.split(',').length;
+        if (items == undefined) return 0;
+        else return items.split(',').length;
     }
 }
 
